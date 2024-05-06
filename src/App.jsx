@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Research countries={countries} />} />
+        <Route path="/research" element={<Research countries={countries} />} />
         <Route path="/country/:name" element={<CountryDetail countries={countries} />} />
       </Routes>
     </div>
