@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Research from './pages/Research';
-
+import Research from './Components/Research';
+import CountryDetail from './Components/CountryDetail';
 function App() {
   const [countries, setCountries] = useState([]);
 
@@ -16,6 +16,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Research countries={countries} />} />
+        <Route path="/country/:name" element={<CountryDetail countries={countries} />} />
       </Routes>
     </div>
   );
