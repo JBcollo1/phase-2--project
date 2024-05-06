@@ -1,21 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Route,Routes } from 'react-router-dom'
-import Home from './pages/About'
-
+import { useState, useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Research from './Components/Research';
+import CountryDetail from './Components/CountryDetail';
 function App() {
-  const [count, setCount] = useState(0)
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    fetch("https://restcountries.com/v3.1/all")
+      .then(response => response.json())
+      .then(data => setCountries(data))
+      .catch(error => console.error('Error fetching countries:', error));
+  }, []);
 
   return (
-    <>
-     <div>
-      <Home />
+    <div>
+      <Routes>
+        <Route path="/" element={<Research countries={countries} />} />
+        <Route path="/country/:name" element={<CountryDetail countries={countries} />} />
+      </Routes>
     </div>
-      
-    </>
-  )
+  );
 }
 
-export default App
+export default App;
