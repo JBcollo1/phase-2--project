@@ -1,7 +1,9 @@
+
 import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Research from './Components/Research';
 import CountryDetail from './Components/CountryDetail';
+import Navbar from './Components/NavBar'
 function App() {
   const [countries, setCountries] = useState([]);
 
@@ -14,10 +16,12 @@ function App() {
 
   return (
     <div>
+     <Navbar />
       <Routes>
         <Route path="/research" element={<Research countries={countries} />} />
         <Route path="/country/:name" element={<CountryDetail countries={countries} />} />
       </Routes>
+
     </div>
   );
 }
