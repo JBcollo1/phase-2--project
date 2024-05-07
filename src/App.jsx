@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import Research from './Components/Research';
 import CountryDetail from './Components/CountryDetail';
 import Navbar from './Components/NavBar'
+import Home from './pages/Home';
 function App() {
   const [countries, setCountries] = useState([]);
 
@@ -18,6 +19,7 @@ function App() {
     <div>
      <Navbar />
       <Routes>
+        <Route path='/' element={<Home />}/>
         <Route path="/research" element={<Research countries={countries} />} />
         <Route path="/country/:name" element={<CountryDetail countries={countries} />} />
       </Routes>
