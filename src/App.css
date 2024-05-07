@@ -44,3 +44,17 @@
 
 
 
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+.search-bar:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #007bff; /* Change border color when focused */
+}

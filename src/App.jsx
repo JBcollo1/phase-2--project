@@ -5,6 +5,7 @@ import Research from './Components/Research';
 import CountryDetail from './Components/CountryDetail';
 import Navbar from './Components/NavBar'
 import Home from './pages/Home';
+import './App.css'
 function App() {
   const [countries, setCountries] = useState([]);
 

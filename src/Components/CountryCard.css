@@ -7,7 +7,7 @@
     overflow: hidden;
     display: inline-block;
     vertical-align: top; 
-    background-color: black;
+    /* background-color: black; */
   }
   
   .country-card-1 img {
