@@ -16,6 +16,7 @@ function Research({ countries }) {
   return (
     <div>
       <input
+        className='search-bar'
         type="text"
         placeholder="Search Country..."
         value={searchQuery}
