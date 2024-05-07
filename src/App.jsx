@@ -4,8 +4,10 @@ import { Route, Routes } from 'react-router-dom';
 import Research from './Components/Research';
 import CountryDetail from './Components/CountryDetail';
 import Navbar from './Components/NavBar'
-import Home from './pages/Home';
+import Home from './pages/Home'
 import FeedbackForm from './Components/FeedbackForm';
+import './App.css'
+
 function App() {
   const [countries, setCountries] = useState([]);
 
