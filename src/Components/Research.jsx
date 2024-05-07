@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import CountryCard from './CountryCard';
 
 function Research({ countries }) {
