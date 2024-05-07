@@ -1,0 +1,28 @@
+
+.home-container h1,
+.home-container p,
+.home-container button {
+  opacity: 0;
+}
+
+
+.home-container h1 {
+  animation: fadeIn 2s ease forwards;
+}
+
+.home-container p {
+  animation: fadeIn 2s ease 2s forwards;
+}
+
+.home-container button {
+  animation: fadeIn 2s ease 4s forwards; 
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
