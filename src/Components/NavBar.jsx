@@ -11,6 +11,9 @@ function Navbar() {
           <Link to="/research">Research</Link>
          
         </div>
+        <div className="navbar-start">
+          <Link to='/feedback'>Feedback</Link>
+        </div>
       </div>
     </nav>
   );

@@ -1,33 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import './FeedbackForm.css'; // Import CSS file
+import './FeedbackForm.css';
 
 const FeedbackForm = () => {
   const [formData, setFormData] = useState({
     name: '',
+    photo: '',
+    avatar: '', 
     message: ''
   });
 
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    fetchComments();
+    fetch("http://localhost:3000/comments")
+      .then(r => r.json())
+      .then(data => setComments(data))
   }, []);
-
-  const fetchComments = async () => {
-    try {
-      const response = await fetch("http://localhost:3001/comments");
-      if (response.ok) {
-        const data = await response.json();
-        
-        console.log("Fetched comments data:", data);
-        setComments(data.comments);
-      } else {
-        console.error("Failed to fetch comments:", response.statusText);
-      }
-    } catch (error) {
-      console.error("Error fetching comments:", error);
-    }
-  };
 
   const handleChange = (e) => {
     setFormData({
@@ -36,72 +24,102 @@ const FeedbackForm = () => {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     
-    try {
-      const response = await fetch("http://localhost:3001/comments", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (response.ok) {
-        setFormData({
-          name: '',
-          message: ''
-        });
-        fetchComments(); // Refresh comments after submission
-      } else {
-        console.error("Failed to submit form data:", response.statusText);
+    fetch("http://localhost:3000/comments", {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': 'application/json'
       }
-    } catch (error) {
-      console.error("Error submitting form data:", error);
-    }
+    })
+    .then(response => response.json())
+    .then(data => {
+      setComments([...comments, data]);
+      setFormData({ name: '', photo: '', avatar: '', message: '' });
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
   };
 
   return (
-    <div className="container"> {/* Apply container class */}
-      <h2 className="title">Feedback Form</h2> {/* Apply title class */}
-      <form onSubmit={handleSubmit}>
-        <div className="inputGroup"> {/* Apply inputGroup class */}
-          <label className="label" htmlFor="name">Name:</label> {/* Apply label class */}
-          <input 
-            className="input" 
-            type="text" 
-            id="name" 
-            name="name" 
-            value={formData.name} 
-            onChange={handleChange} 
-            required 
-          />
-        </div>
-        
-        <div className="inputGroup"> {/* Apply inputGroup class */}
-          <label className="label" htmlFor="message">Message:</label> {/* Apply label class */}
-          <textarea 
-            className="textarea" 
-            id="message" 
-            name="message" 
-            value={formData.message} 
-            onChange={handleChange} 
-            rows="4" 
-            required 
-          />
-        </div>
-        <button className="button" type="submit">Submit</button> {/* Apply button class */}
-      </form>
+    <div className="container">
+      <div className="formContainer">
+        <h2 className="title">Feedback Form</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="inputGroup">
+            <label className="label" htmlFor="name">Name:</label>
+            <input 
+              className="input inputLarge" 
+              type="text" 
+              id="name" 
+              name="name" 
+              value={formData.name} 
+              onChange={handleChange} 
+              required 
+            />
+          </div>
+          <div className="inputGroup">
+            <label className="label" htmlFor="avatar">Avatar URL:</label>
+            <input 
+              className="input inputLarge" 
+              type="text" 
+              id="avatar" 
+              name="avatar" 
+              value={formData.avatar} 
+              onChange={handleChange} 
+            />
+          </div>
+          <div className="inputGroup">
+            <label className="label" htmlFor="photo">Photo URL:</label>
+            <input 
+              className="input inputLarge" 
+              type="text" 
+              id="photo" 
+              name="photo" 
+              value={formData.photo} 
+              onChange={handleChange} 
+              required 
+            />
+          </div>
+         
+          <div className="inputGroup">
+            <label className="label" htmlFor="message">Message:</label>
+            <textarea 
+              className="textarea textareaLarge" 
+              id="message" 
+              name="message" 
+              value={formData.message} 
+              onChange={handleChange} 
+              rows="4" 
+              required 
+            />
+          </div>
+          <button className="button" type="submit">Submit</button>
+        </form>
+      </div>
 
-      <h2 className="commentsTitle">Comments</h2> {/* Apply commentsTitle class */}
-      {/* <ul>
-        {comments.map(comment => (
-          <li key={comment.id}>
-            <strong>{comment.name}</strong>: {comment.message}
-          </li>
-        ))}
-      </ul> */}
+      <div className="commentsContainer">
+        <h2 className="commentsTitle">Comments</h2>
+        <div className="comments">
+          <ul className="commentsList">
+            {comments.map((comment, index) => (
+              <li key={index} className="commentItem">
+                <div className="commentCard">
+                  <div className="userProfile">
+                    <img src={comment.avatar} alt="User Avatar" className="avatar" />
+                    <span className="userName">{comment.name}</span>
+                  </div>
+                  <p className="commentMessage">{comment.message}</p>
+                  <img src={comment.photo} alt="Comment Photo" className="commentPhoto" />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
