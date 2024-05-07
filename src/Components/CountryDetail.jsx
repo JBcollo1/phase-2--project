@@ -1,7 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 const CountryDetail = () => {
   const { name } = useParams();
@@ -14,37 +12,44 @@ const CountryDetail = () => {
     setError(null);
 
     fetch(`https://restcountries.com/v3.1/name/${name}`)
-      .then(response => response.json())
-      .then(data => {
-        if (data && data.length > 0) {
-          setCountry(data[0]);
-        } else {
-          setError('Country not found');
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch country data');
         }
+        return response.json();
+      })
+      .then(data => {
+        setCountry(data[0]);
+        setLoading(false);
       })
       .catch(error => {
-        console.error('Error fetching country:', error);
-        setError('Error fetching country data');
-      })
-      .finally(() => setLoading(false));
+        setError(error.message);
+        setLoading(false);
+      });
   }, [name]);
-
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
 
   return (
     <div className="country-card">
-      <img src={country.flags?.png} alt={country.name?.common} />
-      <h2>{country.name?.common}</h2>
-      <p><strong>Capital:</strong> {country.capital}</p>
-      <p><strong>Population:</strong> {country.population?.toLocaleString()}</p>
-      <p><strong>Region:</strong> {country.region}</p>
-      <p>
-        <div> <strong>Currencies:</strong> {country.currencies && Object.values(country.currencies).map(currency => currency.name).join(', ')}</div>
-       
-      <div> <strong>Symbol:</strong> {country.currencies && Object.values(country.currencies).map(currency => currency.symbol).join(', ')}</div>
-      </p>
-      <Link to={"/"}>Back</Link>
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>Error: {error}</p>
+      ) : (
+        <>
+          <img src={country.flags?.png} alt={country.name?.common} />
+          <h2>{country.name?.common}</h2>
+          <p><strong>Capital:</strong> {country.capital}</p>
+          <p><strong>Population:</strong> {country.population?.toLocaleString()}</p>
+          <p><strong>Region:</strong> {country.region}</p>
+          <p>
+            <strong>Currencies:</strong> {country.currencies && Object.values(country.currencies).map(currency => currency.name).join(', ')}
+          </p>
+          <p>
+            <strong>Symbol:</strong> {country.currencies && Object.values(country.currencies).map(currency => currency.symbol).join(', ')}
+          </p>
+          <Link to={"/research"}>Back</Link>
+        </>
+      )}
     </div>
   );
 };
