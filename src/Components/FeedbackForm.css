@@ -8,7 +8,8 @@
 }
 
 .formContainer {
-  width: 400px;
+  width: 1500px;
+  height: 600px;
   padding: 30px;
   background-color: #ffffff;
   border-radius: 10px;
@@ -16,24 +17,25 @@
 }
 
 .commentsContainer {
-  background-color: #141313;
+  background-color: #060606;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   align-items: center;
   text-align: center;
-  width: 90%;
+  width: 100%;
   max-width: 700px;
-  height: 500px;
+  height: 630px;
   overflow-y: auto;
-  margin-left: 20px; /* Add margin to separate from the form container */
+  margin-left: 10px; 
+  
 }
 
 .title {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #000;
+  color: aqua;
 }
 
 .inputGroup {

@@ -50,11 +50,12 @@ const FeedbackForm = () => {
         <h2 className="title">Feedback Form</h2>
         <form onSubmit={handleSubmit}>
           <div className="inputGroup">
-            <label className="label" htmlFor="name">Name:</label>
+       
             <input 
               className="input inputLarge" 
               type="text" 
               id="name" 
+              placeholder="User Name..."
               name="name" 
               value={formData.name} 
               onChange={handleChange} 
@@ -62,22 +63,24 @@ const FeedbackForm = () => {
             />
           </div>
           <div className="inputGroup">
-            <label className="label" htmlFor="avatar">Avatar URL:</label>
+            
             <input 
               className="input inputLarge" 
               type="text" 
               id="avatar" 
+              placeholder="Profile..."
               name="avatar" 
               value={formData.avatar} 
               onChange={handleChange} 
             />
           </div>
           <div className="inputGroup">
-            <label className="label" htmlFor="photo">Photo URL:</label>
+           
             <input 
               className="input inputLarge" 
               type="text" 
               id="photo" 
+              placeholder="Photo..."
               name="photo" 
               value={formData.photo} 
               onChange={handleChange} 
@@ -86,10 +89,11 @@ const FeedbackForm = () => {
           </div>
          
           <div className="inputGroup">
-            <label className="label" htmlFor="message">Message:</label>
+      
             <textarea 
               className="textarea textareaLarge" 
               id="message" 
+              placeholder="Comment..."
               name="message" 
               value={formData.message} 
               onChange={handleChange} 
