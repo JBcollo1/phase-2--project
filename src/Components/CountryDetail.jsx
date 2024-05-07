@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import "./countryDetail.css"
 
 const CountryDetail = () => {
   const { name } = useParams();
@@ -29,29 +30,40 @@ const CountryDetail = () => {
   }, [name]);
 
   return (
-    <div className="country-card">
+    <div className="country-card-2">
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
         <p>Error: {error}</p>
       ) : (
-        <>
-          <img src={country.flags?.png} alt={country.name?.common} />
-          <h2>{country.name?.common}</h2>
-          <p><strong>Capital:</strong> {country.capital}</p>
-          <p><strong>Population:</strong> {country.population?.toLocaleString()}</p>
-          <p><strong>Region:</strong> {country.region}</p>
-          <p>
-            <strong>Currencies:</strong> {country.currencies && Object.values(country.currencies).map(currency => currency.name).join(', ')}
-          </p>
-          <p>
-            <strong>Symbol:</strong> {country.currencies && Object.values(country.currencies).map(currency => currency.symbol).join(', ')}
-          </p>
-          <Link to={"/research"}>Back</Link>
+        <div className="country-details">
+          <img src={country.flags?.png} alt={country.name?.common} className="country-flag" />
+          <div className="country-info">
+            <h2>{country.name?.common}</h2>
+            <p><strong>Capital:</strong> {country.capital}</p>
+            <p><strong>Population:</strong> {country.population?.toLocaleString()}</p>
+            <p><strong>Region:</strong> {country.region}</p>
+            <p><strong>Currencies:</strong> {country.currencies && Object.values(country.currencies).map(currency => currency.name).join(', ')}</p>
+            <p><strong>Symbol:</strong> {country.currencies && Object.values(country.currencies).map(currency => currency.symbol).join(', ')}</p>
+            <p><strong>Google Maps:</strong> <a href={country.maps.googleMaps} target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
          
-          <p><strong>Google Maps:</strong> <a href={country.maps.googleMaps} target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
-          <a  href={country.maps.googleMaps} />
-        </>
+            {country.flags && country.flags.alt ? (
+            <p><strong>Flag description:</strong> {country.flags.alt}</p>
+             ) : (
+             <p>Flag description for this country is not available</p>
+             )}
+
+            <Link to={"/research"} className="back-link">Back</Link>
+          </div>
+            {country.coatOfArms && country.coatOfArms.svg ? (
+            <div className="coat-of-arms">
+            <img src={country.coatOfArms.svg} alt="Coat of Arms" />
+            </div>
+            ) : (
+          <p>Coat of Arms for this region is not present</p>
+          )}
+
+        </div>
       )}
     </div>
   );

@@ -1,0 +1,114 @@
+ .country-card-2 {
+    background-color: #141313;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    width: 500px;
+    margin: auto; 
+    position: absolute;
+    margin-top: 100px;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+  }
+  
+  
+  .country-flag {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
+  
+  .country-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .coat-of-arms img {
+    background-color: aliceblue;
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .country-info {
+    text-align: left;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .country-info h2 {
+    background-color: whitesmoke;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .back-link:hover {
+    text-decoration: underline;
+    color: red;
+  }
+  
+  
+  .country-flag {
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .country-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .coat-of-arms img {
+    background-color: aliceblue;
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .country-info {
+    text-align: left;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .country-info h2 {
+    background-color: whitesmoke;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .back-link:hover {
+    text-decoration: underline;
+    color: red;
+  }
+  
