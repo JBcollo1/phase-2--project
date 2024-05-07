@@ -43,18 +43,63 @@
 
 
 
-
 .search-bar {
-  width: 100%;
+  width: calc(100% - 40px); 
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
-  margin-bottom: 20px;
-  box-sizing: border-box; /* Ensure padding and border are included in width */
+  margin-top: 60px; 
+  margin-left: 20px; 
+  margin-right: 20px; 
+  box-sizing: border-box;
 }
 
 .search-bar:focus {
-  outline: none; /* Remove default focus outline */
-  border-color: #007bff; /* Change border color when focused */
+  outline: none;
+  border-color: #007bff;
 }
+
+.navbar {
+  background-color: #804511;
+  color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+} 
+
+
+
+.navbar-brand a {
+  color: #fff;
+  font-size: 1.8rem; 
+  text-decoration: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+.navbar-menu {
+  display: flex;
+  margin-left: 20px;
+}
+
+.navbar-menu li {
+  list-style-type: none; 
+  
+  display: flex;
+  gap: 60px;
+}
+
+.navbar-menu a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease; 
+}
+
+.navbar-menu a:hover {
+  color: #ccc; 
+}
+
+
