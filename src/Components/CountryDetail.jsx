@@ -48,6 +48,9 @@ const CountryDetail = () => {
             <strong>Symbol:</strong> {country.currencies && Object.values(country.currencies).map(currency => currency.symbol).join(', ')}
           </p>
           <Link to={"/research"}>Back</Link>
+         
+          <p><strong>Google Maps:</strong> <a href={country.maps.googleMaps} target="_blank" rel="noopener noreferrer">View on Google Maps</a></p>
+          <a  href={country.maps.googleMaps} />
         </>
       )}
     </div>
