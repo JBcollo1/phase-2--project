@@ -1,28 +1,70 @@
 
-.home-container h1,
-.home-container p,
-.home-container button {
-  opacity: 0;
+ body {
+    font-family: poppins;
+    background-image: url(https://media.istockphoto.com/id/1362641668/photo/beautiful-sunset-and-skylines-at-manila.jpg?s=612x612&w=0&k=20&c=jaJOEp9zXLUQW8dv2tywPul48f5d4GRAM3eNQkIGDfo=);
+    background-repeat: no-repeat; /* Stop the background image from repeating */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
 }
 
+.home-container h1,
+.home-container h2,
+.home-container p,
+.home-container button {
+    opacity: 0;
+}
 
 .home-container h1 {
-  animation: fadeIn 2s ease forwards;
+    animation: fadeIn 2s ease forwards;
+    font-weight: bold;
+    font-size: 5em;
+    line-height: 1.3em;
+}
+
+.home-container h2 {
+    animation: fadeIn 2s ease forwards;
+    font-weight: bold;
+    letter-spacing: 10px;
+    color: orange;
 }
 
 .home-container p {
-  animation: fadeIn 2s ease 2s forwards;
+    animation: fadeIn 2s ease 2s forwards;
+    color: orange;
 }
 
 .home-container button {
-  animation: fadeIn 2s ease 4s forwards; 
+    animation: fadeIn 2s ease 4s forwards;
+    height: 40px;
+    margin-top: 20px;
+    border: none;
+    background-color: transparent;
+    color: #eee;
+    border: 1px solid #eee;
+    letter-spacing: 3px;
+    font-family: poppins;
+    font-weight: 500;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.home-container {
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: azure;
+    text-shadow: 0 5px 10px #0004;
+    font-size: 15px;
 }

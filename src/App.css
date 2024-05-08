@@ -40,7 +40,11 @@
 .read-the-docs {
   color: #888;
 }
-
+body{
+  font-family: poppins;
+  background-color: rgb(47, 43, 43);
+  font-size: 12px;
+}
 
 
 .search-bar {
@@ -69,11 +73,18 @@
   left: 0;
   right: 0;
   z-index: 1000;
+  font-family: poppins;
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
 } 
 
 
 
 .navbar-brand a {
+  margin-right: 40px;
   color: #fff;
   font-size: 1.8rem; 
   text-decoration: none;
