@@ -94,11 +94,12 @@ body{
 .navbar-menu {
   display: flex;
   margin-left: 20px;
+
 }
 
 .navbar-menu li {
   list-style-type: none; 
-  
+  border: 1px solid white;
   display: flex;
   gap: 60px;
 }
