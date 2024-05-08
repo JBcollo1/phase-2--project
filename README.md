@@ -10,8 +10,9 @@ Currently, two official plugins are available:
 
 
 #### Global Insight Hub
-# By ## Jorbat Kamau
-  ##    Ace
+# By 
+  ##    Jorbat Kamau
+  ##    Ace Samuel
   ##    Laurah Famba
 Welcome to Global Insight Hub! This web application provides a platform for users to search for information about countries and their capitals. It leverages the REST Countries API to fetch data about countries from around the world and displays the results in an organized manner.    It also 
 allows user to share photos of places they have been  to and would like to share theire experience.
@@ -71,7 +72,7 @@ Background images used in the application are sourced from istock.
 
 
 ## License
-Copyright &copy; 2024 Jorbat Kamau , Laurah Famba, 
+Copyright &copy; 2024 Jorbat Kamau , Laurah Famba, Ace Samuel
 @@ -44,4 +61,4 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
