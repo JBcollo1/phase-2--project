@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom'; 
-import './Home.css'; // Import your CSS file
+import './Home.css'; 
 
 const Home = () => {
     return (

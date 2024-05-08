@@ -2,9 +2,9 @@
  body {
     font-family: poppins;
     background-image: url(https://media.istockphoto.com/id/1362641668/photo/beautiful-sunset-and-skylines-at-manila.jpg?s=612x612&w=0&k=20&c=jaJOEp9zXLUQW8dv2tywPul48f5d4GRAM3eNQkIGDfo=);
-    background-repeat: no-repeat; /* Stop the background image from repeating */
-    background-size: cover; /* Cover the entire viewport */
-    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
 }
 
 .home-container h1,
