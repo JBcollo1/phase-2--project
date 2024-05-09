@@ -139,3 +139,34 @@
   max-width: 100%;
   margin-top: 10px;
 }
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  font-size: 20px; 
+  background-color: #ccc; 
+  color: #fff; 
+}
+.like {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #606060;
+  transition: color 0.3s;
+}
+
+.like:hover {
+  color: #ff0000; /* Change to red when hovered */
+}
+
+.like-icon {
+  margin-right: 5px;
+}
