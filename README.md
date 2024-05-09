@@ -12,7 +12,7 @@ Currently, two official plugins are available:
 #### Global Insight Hub
 # By 
   ##    Jorbat Kamau
-  ##    Ace Samuel
+  ##    Ace Mwangi Samuel
   ##    Laurah Famba
 Welcome to Global Insight Hub! This web application provides a platform for users to search for information about countries and their capitals. It leverages the REST Countries API to fetch data about countries from around the world and displays the results in an organized manner.    It also 
 allows user to share photos of places they have been  to and would like to share theire experience.
