@@ -1,9 +1,3 @@
-
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import './FeedbackForm.css';
 
@@ -18,7 +12,7 @@ const FeedbackForm = () => {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/comments")
+    fetch("https://jcollins-comments.onrender.com/comments")
       .then(r => r.json())
       .then(data => setComments(data))
   }, []);
@@ -33,7 +27,7 @@ const FeedbackForm = () => {
   const handleSubmit = (e) => { 
     e.preventDefault();
     
-    fetch("http://localhost:3000/comments", {
+    fetch("https://jcollins-comments.onrender.com/comments", {
       method: 'POST',
       body: JSON.stringify(newComment),
       headers: {
@@ -65,7 +59,7 @@ const FeedbackForm = () => {
     commentToUpdate.like++;
   
   
-    fetch(`http://localhost:3000/comments/${commentToUpdate.id}`, {
+    fetch(`https://jcollins-comments.onrender.com/comments/${commentToUpdate.id}`, {
       method: 'PUT', 
       body: JSON.stringify(commentToUpdate),
       headers: {
