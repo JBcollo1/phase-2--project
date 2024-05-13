@@ -15,7 +15,7 @@ Currently, two official plugins are available:
   ##    Ace Mwangi Samuel
   ##    Laurah Famba
 Welcome to Global Insight Hub! This web application provides a platform for users to search for information about countries and their capitals. It leverages the REST Countries API to fetch data about countries from around the world and displays the results in an organized manner.    It also 
-allows user to share photos of places they have been  to and would like to share theire experience.
+allows user to share photos of places they have been  to and would like to share their experience.
 
 ## Features
 Search Functionality: Users can search for countries by entering either the country name.
@@ -26,8 +26,15 @@ Detailed Information: Upon selecting a country from the search results, detailed
 
 Feedback: one is able to view comments and also add on it to be seen by people from various regions
 
-
-
+##Links
+server link 
+```bash
+ https://github.com/JBcollo1/json-server-template.git
+```
+Live Link
+```bash
+ global-insight-hub.netlify.app/
+```
 ## Usage
 To use the Global Insight Hub application:
 
